@@ -1,0 +1,13 @@
+@import './variables';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  background: $backgroundColor;
+  padding: 0 16px;
+  overflow-x: auto;
+
+  @media (min-width: $breakpointTablet) {
+    align-items: center;
+  }
+}
