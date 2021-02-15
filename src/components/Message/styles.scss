@@ -1,0 +1,53 @@
+@import '../../variables';
+@import '../../functions';
+@import '../../mixins.scss';
+@import '../../placeholders';
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 10px;
+    padding: setSpacing(4);
+    font-family: $fontFamily;
+    font-size: $smfontSize;
+    color: $textColor;
+    @extend %shadow;
+
+    &:not(:last-child) {
+        // NOTE: spacing between messages from a thread is smaller so it is visible they are grouped
+        margin: 0 0 setSpacing(4);
+    }
+
+    &__subject {
+        font-size: $bigFontSize;
+        font-weight: $bold;
+    }
+
+    &__text {
+        margin-top: 8px;
+        font-size: $bigFontSize;
+    }
+
+    &--rating {
+        &-high {
+            @include getColor(true, 'text');
+        }
+
+        &-low {
+            @include getColor(false, 'text');
+        }
+    }
+
+    &__content {
+        margin-right: setSpacing(4);
+    }
+
+    &__meta {
+        min-width: 80px;
+        width: 20%;
+        text-align: right;
+    }
+}

@@ -1,0 +1,21 @@
+@import './variables';
+
+@function getTextColor($isHighRating) {
+    @if $isHighRating {
+        @return $highRatingTextColor;
+    } @else {
+        @return $lowRatingTextColor;
+    }
+}
+
+@function getBackgroundColor($isHighRating) {
+    @if $isHighRating {
+        @return $highRatinBackgroundColor;
+    } @else {
+        @return $lowRatinBackgroundColor;
+    }
+}
+
+@function setSpacing($size) {
+    @return $size * $baseSpacing * 1px;
+}

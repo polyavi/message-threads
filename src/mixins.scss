@@ -1,0 +1,13 @@
+@import './functions.scss';
+
+@mixin google-font($family) {
+    @import url("http://fonts.googleapis.com/css?family=#{$family}");
+}
+
+@mixin getColor($isHighRating, $type) {
+    @if $type == 'text' {
+        color: getTextColor($isHighRating);
+    } @else if $type == 'background' {
+        background: getBackgroundColor($isHighRating);
+    }
+}
